@@ -8,8 +8,8 @@
     </script>
     <script type="text/javascript">
         /* $(document).ready(function() {
-                                                                                            alert('Did you know that you can copy this text usingCtrl + C shortcut?');
-                                                                                        }); */
+                                                                                                                    alert('Did you know that you can copy this text usingCtrl + C shortcut?');
+                                                                                                                }); */
         $(function() {
             $('#a').css('color', 'red').append(' appended text');
             $('div').css('color', 'green'); // $('div') returns every <div> element, css adds green text color
@@ -23,6 +23,8 @@
             $('[href]').css('border', '1px solid black').css('padding', '3px'); // all hrefs add padding
             $('a[href*=kalaka]').css('border', '1px solid pink'); // all hrefs containing "kalaka" in adress add pink border
             $('a[href$=\'.pdf\']').css('border', '1px solid red'); // all hrefs ends with "pdf" add red border
+
+            alert('The color of an element withid="a" is ' + $('#a').css('color'));
         })
     </script>
 </head>
