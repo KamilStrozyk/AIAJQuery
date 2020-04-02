@@ -25,15 +25,32 @@
                        // weird behaviour- animations aren't blocking operations
                        return false;
                    });*/
-            $('a').click(function() {
+            /* $('a').click(function() {
                 let thisA = $(this);
                 $('#content').fadeOut('medium', function() {
                     $('#content').load('AJAX' + thisA.attr('href'), function() {
                         $('#content').fadeIn();
                     });
                 });
+                return false; // if we remove this, primary function of a will process- we load not-ajax files
+           // that works fine, we're first do fade out, then load will happen
+           // we can;t use this because this is not referencing to a inside interal function of content
+            }); */
+            $('a').click(function() {
+                $('#content').animate({
+                    height: '0px',
+                    width: '0px'
+                }, () => {
+                    $('#content').load('AJAX' + $(this).attr('href'), () => {
+                        $('#content').animate({
+                            height: '500px',
+                            width: '500px'
+                        });
+                    });
+                });
                 return false;
             });
+            // we can use this, because of arrow functions
         });
     </script>
 </head>
