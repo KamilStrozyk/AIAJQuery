@@ -7,12 +7,56 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
     </script>
     <script type="text/javascript">
-        $(document).ready(function() {
-            alert('Did you know that you can copy this text usingCtrl + C shortcut?');
-        });
+        /* $(document).ready(function() {
+                                                                                            alert('Did you know that you can copy this text usingCtrl + C shortcut?');
+                                                                                        }); */
+        $(function() {
+            $('#a').css('color', 'red').append(' appended text');
+            $('div').css('color', 'green'); // $('div') returns every <div> element, css adds green text color
+            $('.c').css('font-size', 'x-large '); // $('.c') returns every div with class c, css sets font size to x-large
+            $('tr + tr').css('color', 'aqua'); // $('tr +tr') returns every tr element which is after tr element, css is obvious
+
+            $('table tr:first').css('color', 'yellow'); // yellow to first tr in table
+            $('tr:last').css('color', 'yellow'); // yellow to all last tr
+            $('p:even').css('color', 'orange'); // all even p
+
+            $('[href]').css('border', '1px solid black').css('padding', '3px'); // all hrefs add padding
+            $('a[href*=kalaka]').css('border', '1px solid pink'); // all hrefs containing "kalaka" in adress add pink border
+            $('a[href$=\'.pdf\']').css('border', '1px solid red'); // all hrefs ends with "pdf" add red border
+        })
     </script>
 </head>
 
-<body></body>
+<body>
+    <p id="a">a</p>
+    <p>b</p>
+    <p>c</p>
+    <p>d</p>
+    <div>e</div>
+    <div class="c">f</div>
+    <table>
+        <tr>
+            <td>First</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+        </tr>
+        <tr>
+            <td>Third</td>
+        </tr>
+        <tr>
+            <td>Fourth</td>
+        </tr>
+        <tr>
+            <td>Fifth</td>
+        </tr>
+        <tr>
+            <td>Sixth</td>
+        </tr>
+    </table>
+    <a href="wakalaka.html">Wakalaka</a>
+    <a href="asdf.pdf">PDF</a>
+    <a href="asdf.html">Asdf</a>
+</body>
 
 </html>
